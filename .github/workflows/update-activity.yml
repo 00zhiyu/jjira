@@ -1,12 +1,12 @@
 name: Update GitHub Activity
 on:
   schedule:
-    - cron: "*/3 * * * *" 
+    - cron: "*/30 * * * *" 
   workflow_dispatch:
 
 jobs:
   update-activity:
-    runs-on: ubnutu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Update GitHub Activity
