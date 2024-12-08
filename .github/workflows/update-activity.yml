@@ -1,16 +1,17 @@
 name: Update GitHub Activity
 on:
   schedule:
-    - cron: "*/30 * * * *" 
-  workflow_dispatch:
+    - cron: "*/3 * * * *"  # 每3分鐘運行一次
+  workflow_dispatch:  # 允許手動觸發
 
 jobs:
   update-activity:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4  # 檢出代碼庫
       - name: Update GitHub Activity
         uses: TheDanniCraft/activity-log@v1
         with:
-          GITHUB_USERNAME: "00zhiyu"
-          GITHUB_TOKEN: ${{ secrets.ACTIONSECRET2024 }}
+          GITHUB_USERNAME: "00zhiyu"  # 你的GitHub帳號
+          GITHUB_TOKEN: ${{ secrets.ACTIONSECRET2024 }}  # 你的GitHub Token
+
